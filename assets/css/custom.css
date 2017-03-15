@@ -1,0 +1,180 @@
+/*
+ * CSS Customization
+ * Author: Artur Guimarães
+ */
+.absolute-20 {
+	position: absolute;
+	top: 20%;
+}
+
+.absolute-8 {
+	position: absolute;
+	bottom: 8%;
+}
+
+.centered-inline {
+	display: inline;
+}
+
+.no-padding-margin {
+	margin: 0;
+	padding: 0;
+}
+
+.list-inline {
+    margin-top: 30px;
+}
+
+.title-intro {
+	visibility: visible;
+	animation-delay: 0.4s;
+	text-align:center;
+}
+
+.subtitle-intro {
+	visibility: visible;
+	animation-delay: 1.0s;
+	text-align:center;
+}
+
+.h1-intro {
+    font-size: 80px;
+    font-family: arvo;
+    font-weight: 300;
+    letter-spacing: 6px;
+	vertical-align:middle;
+}
+
+.h3-intro {
+    font-weight: 300;
+	vertical-align:middle;
+}
+
+.img-intro {
+	height:90px;
+	margin-right:20px;
+}
+
+.btn {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.4;
+    border-radius: 4px;
+    padding: 10px 15px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
+    transition: border .25s linear, color .25s linear, background-color .25s linear;
+}
+
+.btn-lg {
+    padding: 10px 19px;
+    font-size: 17px;
+    line-height: 1.471;
+    border-radius: 6px;
+	margin-right: 20px;
+}
+
+.btn-blue {
+    border: 1px solid #3b5998;
+    color: #fff;
+    background-color: #3b5998;
+}
+
+.btn-cyano {
+    border: 1px solid #4A90BE;
+    color: #fff;
+    background-color: #4A90BE;
+}
+
+.btn-blue:hover, .btn-blue:focus {
+    border: 1px solid #fff;
+    color: #fff !important;
+    background: rgba(204, 204, 204, 0);
+}
+
+.btn-cyano:hover, .btn-cyano:focus {
+    border: 1px solid #fff;
+    color: #fff !important;
+    background: rgba(204, 204, 204, 0);
+}
+
+.network-name {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+
+.lead {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 1.46428571;
+    font-weight: 300;
+}
+
+.content-section-a {
+    background-color: #f8f8f8;
+    padding: 90px 0;
+}
+
+.content-section-b {
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 90px 0;
+}
+
+.content-section-c {
+    border-top: 1px solid #e2574c;
+    border-bottom: 1px solid #e2574c;
+	background-color: #e2574c;
+}
+
+.tworow {
+    margin-top: 90px;
+}
+
+.wrap_title {
+    margin-bottom: 30px;
+}
+
+.rotate {
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+    overflow: hidden;
+}
+
+.rotate:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+
+/***************PHONE CUSTOMIZATION***************/
+@media only screen and (max-width: 767px) {
+	h1, .h1 {
+    	font-size: 50px !important;
+	}
+	
+	h2, .h2 {
+    	font-size: 40px !important;
+	}
+	
+	h3, .h3 {
+    	font-size: 19px !important;
+	}
+	
+	.img-intro {
+		margin-right:0;
+		margin-bottom: 10px;
+	}
+	
+	.lead {
+		font-size: 19px;
+	}
+}
