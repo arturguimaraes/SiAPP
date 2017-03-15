@@ -23,7 +23,7 @@
                     <a href="#about">Sobre</a>
                 </li>
                 <li class="page-scroll menu-item">
-                    <a href="#download">Cadastre-se</a>
+                    <a href="#map">Mapa</a>
                 </li>
                 <li class="page-scroll menu-item">
                     <a href="#fill">Fui roubado!</a>
@@ -39,7 +39,7 @@
 <!-- HOME INTRODUCTION -->
 <section class="intro">
     <div class="intro-body">
-        <div class="col-xs-12 text-center absolute-20 no-padding-margin">
+        <div class="col-xs-12 text-center absolute-20 no-padding-margin"  style="margin-top:10%;">
             <div class="col-xs-12 title-intro no-padding-margin animated fadeIn">
                 <img class="centered-inline img-intro rotate" src="assets/img/icon/thief.png">
                 <h1 class="h1-intro centered-inline">SiApp</h1>
@@ -47,12 +47,12 @@
             <div class="col-xs-12 subtitle-intro no-padding-margin animated fadeIn">
             	<h3 class="h3-intro">Um Sistema para Análise de Ocorrências de Crimes em Niterói</h3>
             </div>
-            <ul class="col-xs-12 list-inline">
+            <!--<ul class="col-xs-12 list-inline">
                 <li><a href="#" class="btn btn-lg btn-blue animated fadeIn" style="visibility: visible; animation-delay: 1.2s;"><span class="network-name">Facebook</span></a>
                 </li>
                 <li><a href="#" class="btn btn-lg btn-cyano animated fadeIn" style="visibility: visible; animation-delay: 1.4s;"><span class="network-name">Twitter</span></a>
                 </li>
-            </ul>
+            </ul>-->
         </div>
         <div class="col-xs-12 text-center absolute-8">
             <div class="page-scroll">
@@ -68,28 +68,22 @@
 <section id="about" class="container content-section content-section-b text-center" style="border-top: 0px; margin-top: 0px;">
     <div class="container">
     	<!-- ABOUT TITLE -->
-        <div class="col-md-6 col-md-offset-3 text-center wrap_title">
-            <h2>O que é?</h2>
-            <p class="lead" style="margin-top:0">O TravelApp vai revolucionar a vida de quem gosta de viajar. Descubra viagens de sua preferência, feitas por pessoas que têm o mesmo estilo que você!</p>
+        <div class="col-md-6 col-md-offset-3 text-center wrap_title animated animated" style="visibility: visible; animation-name: fadeInDown;">
+            <h2>Quem somos?</h2>
+            <p class="lead" style="margin-top:0">O SiAPP é um Sistema para Análise de Ocorrências de Crimes Baseado em Aprendizado Lógico-Relacional.
+            </p>
         </div>
         
-        <!-- ABOUT ICONS FIRST ROW -->
+        <!-- ABOUT FIRST ROW -->
         <div class="row">
-            <div class="col-sm-4 fadeInDown text-center animated animated" style="visibility: visible; animation-name: fadeInDown;">
-                <img class="rotate" src="assets/img/icon/search.png" alt="Ache sua viagem">
-                <h3>Ache a viagem que se encaixa no seu perfil</h3>
-                <p class="lead">Com o TravelApp você encontra a melhor viagem que se encaixa com você!</p>
+            <div class="col-sm-8 fadeInDown text-center animated animated" style="visibility: visible; animation-name: fadeInDown;">
+        		<img class="width-100" src="assets/img/niteroi_map.jpg">
             </div>
             <div class="col-sm-4 fadeInDown text-center animated animated" style="visibility: visible; animation-name: fadeInDown;">
-                <img class="rotate" src="assets/img/icon/pencil.png" alt="Generic placeholder image">
-                <h3>Gastos</h3>
-                <p class="lead">Coloque na ponta do lápis todos os gastos de acordo com pessoas que já fizeram a viagem que você deseja.</p>
-            </div>
-            <div class="col-sm-4 fadeInDown text-center animated animated" style="visibility: visible; animation-name: fadeInDown;">
-                <img class="rotate" src="assets/img/icon/people.png" alt="Generic placeholder image">
-                <h3>Viaje em grupo</h3>
-                <p class="lead">Sonha em viajar para um lugar e não tem com quem ir? Junte-se com outras pessoas que estão querendo fazer a mesma viagem que você!</p>
-            </div>				
+        		<p>Você pode ajudar a previnir próximos crimes!</p>
+                <p>O SiAPP utiliza uma inteligência artificial para calcular e prever crimes em certas áreas e horários, de acordo com os dados recebidos. Ou seja, quanto mais dados, melhor a predição!</p>
+                <p>Forneça dados sobre crimes que já aconteceram com VOCÊ e nos ajude previnir próximos crimes! Você certamente será beneficiado também!</p>
+            </div>					
         </div>
         
         <!-- ABOUT ICONS SECOND ROW -->
@@ -121,8 +115,25 @@
     </div>
 </section>
 
-<!-- DOWNLOAD -->
-<section id="download" class="content-section text-center">
+<!-- MAP -->
+<section id="map" class="content-section text-center">
+    <div class="">
+        <div class="col-md-12">
+            <div id="googleMap" style="width:100%;height:400px;"></div>      
+            <script>
+                function myMap() {
+                var mapProp= {
+                    center:new google.maps.LatLng(-22.8873528,-43.1133137),
+                    zoom:14,
+                };
+                var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx7RRomppFzBUCQfToBi22kF2UsdEU6Iw&callback=myMap"></script>
+        </div>
+    </div>
+</section>
+<!--<section id="download" class="content-section text-center">
     <div class="download-section">
         <div class="container">
             <div class="col-md-8 col-md-offset-2">
@@ -132,42 +143,72 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 
 <!-- FILL INFO -->
 <section id="fill" class="container content-section text-center">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h2>Fui roubado!</h2>
-            <p>Informe aqui os dados do seu roubo.</p>
-            <ul class="list-inline banner-social-buttons">
-                <li><a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                </li>
-                <li><a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                </li>
-                <li><a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                </li>
-            </ul>
+            <h2>Fui roubado! O que fazer?</h2>
+            <br><p>Ajude-nos a coletar informações sobre os dados do crime que ocorreu com você clicando <a class="link-underline" href="#">aqui</a>.</p>
         </div>
     </div>
 </section>
 
 <section id="contact" class="content-section content-section-c text-center">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <h2>Contact Start Bootstrap</h2>
-            <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-            <p>feedback@startbootstrap.com</p>
-            <ul class="list-inline banner-social-buttons">
-                <li><a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                </li>
-                <li><a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                </li>
-                <li><a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                </li>
-            </ul>
+	<div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>Entre em contato!</h2><br>
+                <form role="form" action="" method="post">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="InputName">Seu Nome</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Digite o seu nome" required="">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputEmail">Seu E-mail</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Digite seu e-mail" required="">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputMessage">Mensagem</label>
+                            <div class="input-group">
+                                <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required=""></textarea>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                            </div>
+                        </div>
+    
+                        <input type="submit" name="submit" id="submit" value="Submit" class="btn wow tada btn-embossed btn-primary pull-right animated animated" style="visibility: visible;">
+                    </div>
+                </form>
+                
+                <hr class="featurette-divider hidden-lg">
+                    <div class="col-md-5 col-md-push-1 address">
+                        <address>
+                        <h3>Onde estamos</h3>
+                        <p class="lead"><a href="https://www.google.com.br/maps/place/R.+do+Ouvidor,+90+-+Centro,+Rio+de+Janeiro+-+RJ,+20040-030/@-22.9031712,-43.1795134,17z/data=!3m1!4b1!4m5!3m4!1s0x997f5ee3767063:0x841942c7bca59ebb!8m2!3d-22.9031712!4d-43.1773247">Rua do Ouvidor, 90<br>
+                        Rio de Janeiro, RJ 20040-030</a><br>
+                        Telefone: +55 21 3190 1971</p>
+                        </address>
+    
+                        <h3>Social</h3>
+                        <li class="social"> 
+                        <a href="#"><i class="fa fa-facebook-square fa-size"> </i></a>
+                        <a href="#"><i class="fa  fa-twitter-square fa-size"> </i> </a> 
+                        <a href="#"><i class="fa fa-google-plus-square fa-size"> </i></a>
+                        <a href="#"><i class="fa fa-flickr fa-size"> </i> </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+	</div>
 </section>
     
 <!-- Footer -->
