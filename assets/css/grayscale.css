@@ -47,10 +47,6 @@ p {
     line-height: 1.5;
 }
 
-i {
-    vertical-align: middle;
-}
-
 @media(min-width:767px) {
     p {
         margin: 0 0 35px;
@@ -163,7 +159,7 @@ li {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(../img/niteroi.jpg) no-repeat center center; 
+    background: url(../img/bg.jpg) no-repeat center center; 
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;

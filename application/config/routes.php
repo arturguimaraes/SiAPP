@@ -51,6 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 // RESERVED ROUTES
-$route['default_controller'] = 'pages/view';
+$route['default_controller'] = 'pages/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//OTHER ROUTES
+$route['inform'] = 'pages/index/inform';
