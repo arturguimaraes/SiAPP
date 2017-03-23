@@ -17,7 +17,7 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll menu-item">
-                    <a href="#">Home</a>
+                    <a href="<?=$baseURL?>">Home</a>
                 </li>
                 <li class="page-scroll menu-item">
                     <a href="#data">Informe os Dados</a>
@@ -56,7 +56,7 @@
                         <div class="form-group">
                             <label for="message">Mensagem</label>
                             <div class="input-group">
-                                <textarea name="message" id="message" class="form-control" rows="5" required=""></textarea>
+                                <textarea name="message" id="message" class="form-control" rows="5" required></textarea>
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
                             </div>
                         </div>

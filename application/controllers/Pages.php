@@ -8,6 +8,8 @@ class Pages extends CI_Controller {
 	}
 	
 	public function index($page = 'home') {
+		
+		$data = array();
 		if ($page == 'home') {
 			//SEND E-MAIL FORM
 			if (isset($_POST['submit'])) {
@@ -28,12 +30,12 @@ class Pages extends CI_Controller {
 		}
 		else if ($page == 'inform') {
 			$this->load->helper('url');
-			$baseURL = base_url();
+			$data['baseURL'] = base_url();
 		}
 		
 		$root = 'pages/' . $page;
 		$this->load->view('templates/header');
-		$this->load->view($root);
+		$this->load->view($root, $data);
 		$this->load->view('templates/footer');
 	}
 	
