@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
     <!-- Browser Info -->
     <link rel="icon" href="assets/img/icon/thief.png">
-  	<title>SiAPP - Um Sistema para Análise de Ocorrências de Crimes em Niterói</title>
+  	<title>SiAPP<?=$pageTitle?></title>
 
     <!-- Fonts -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">

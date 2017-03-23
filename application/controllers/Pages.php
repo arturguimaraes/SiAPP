@@ -11,6 +11,7 @@ class Pages extends CI_Controller {
 		
 		$data = array();
 		if ($page == 'home') {
+			$data['pageTitle'] = ' - Um Sistema para Análise de Ocorrências de Crimes em Niterói';
 			//SEND E-MAIL FORM
 			if (isset($_POST['submit'])) {
 				$siappEmail = 'arturguimaraes92@hotmail.com';		
@@ -29,14 +30,15 @@ class Pages extends CI_Controller {
 			}
 		}
 		else if ($page == 'inform') {
+			$data['pageTitle'] = ' - Reportar um Crime';
 			$this->load->helper('url');
 			$data['baseURL'] = base_url();
 		}
 		
 		$root = 'pages/' . $page;
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 		$this->load->view($root, $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates/footer', $data);
 	}
 	
 }

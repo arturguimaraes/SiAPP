@@ -20,7 +20,7 @@
                     <a href="#about">Sobre</a>
                 </li>
                 <li class="page-scroll menu-item">
-                    <a href="#theft">Fui roubado!</a>
+                    <a href="#theft">Reportar um crime</a>
                 </li>
                 <li class="page-scroll menu-item">
                     <a href="#contact">Contato</a>
@@ -51,7 +51,7 @@
             	<h3 class="h3-intro">Um Sistema para Análise de Ocorrências de Crimes em Niterói</h3>
             </div>
             <ul class="col-xs-12 list-inline">
-                <li class="page-scroll uppercase"><a href="#theft" class="btn btn-lg btn-red animated fadeIn" style="visibility: visible; animation-delay: 1.2s;"><span class="network-name">Fui Roubado!</span></a>
+                <li class="page-scroll uppercase"><a href="#theft" class="btn btn-lg btn-red animated fadeIn" style="visibility: visible; animation-delay: 1.2s;"><span class="network-name">Reportar um crime</span></a>
                 </li>
             </ul>
         </div>
@@ -101,9 +101,9 @@
     <div class="container">
         <div class="col-md-8 col-md-offset-2 margin-bottom-50">
             <div class="col-md-2"><img class="rotate" src="assets/img/icon/thief.png"></div>
-            <div class="col-md-10"><h2>Fui roubado! O que fazer?</h2></div>
+            <div class="col-md-10"><h2>Reporte o crime aqui!</h2></div>
             <p>Ajude-nos a coletar informações sobre os dados do crime que ocorreu com você clicando no botão abaixo.</p>
-            <a href="inform" class="btn wow tada btn-embossed btn-success animated animated" style="visibility: visible;">Preencher informações</a>
+            <a href="inform" class="btn wow tada btn-embossed btn-success animated animated uppercase" style="visibility: visible;">Preencher informações</a>
         </div>
     </div>
 </section>
