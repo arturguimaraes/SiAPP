@@ -40,10 +40,16 @@
     </div> <!-- / END CONTAINER -->
 </footer>
 
+<!-- Moment Javascript -->
+<script src="assets/js/moment-with-locales.min.js"></script>
+
 <!-- Bootstrap Javascript -->
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
 <!-- Custom Theme JavaScript -->
 <script src="assets/js/siapp.js"></script>
 <script src="assets/js/script.js"></script>
+
 </body>
 </html>

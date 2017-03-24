@@ -45,7 +45,7 @@
         <div class="col-xs-12 text-center absolute-20 no-padding-margin"  style="margin-top:10%;">
             <div class="col-xs-12 title-intro no-padding-margin animated fadeIn">
                 <img class="centered-inline img-intro rotate" src="assets/img/icon/thief.png">
-                <h1 class="h1-intro centered-inline">SiApp</h1>
+                <h1 class="h1-intro centered-inline">SiAPP</h1>
             </div>
             <div class="col-xs-12 subtitle-intro no-padding-margin animated fadeIn">
             	<h3 class="h3-intro">Um Sistema para Análise de Ocorrências de Crimes em Niterói</h3>
@@ -78,10 +78,10 @@
         
         <!-- ABOUT FIRST ROW -->
         <div class="row">
-            <div class="col-sm-8 fadeInDown text-center animated animated" style="visibility: visible; animation-name: fadeInDown;">
+            <div class="col-md-8 fadeInDown text-center animated animated" style="visibility: visible; animation-name: fadeInDown;">
         		<img class="width-100" src="assets/img/niteroi_map.jpg">
             </div>
-            <div class="col-sm-4 fadeInDown text-center animated animated" style="visibility: visible; animation-name: fadeInDown;">
+            <div class="col-md-4 fadeInDown text-center animated animated" style="visibility: visible; animation-name: fadeInDown;">
         		<p>Você pode ajudar a previnir próximos crimes!</p>
                 <p>O SiAPP utiliza uma inteligência artificial para calcular e prever crimes em certas áreas e horários, de acordo com os dados recebidos. Ou seja, quanto mais dados, melhor a predição!</p>
                 <p>Forneça dados sobre crimes que já aconteceram com VOCÊ e nos ajude previnir próximos crimes! Você certamente será beneficiado também!</p>
@@ -103,7 +103,7 @@
             <div class="col-md-2"><img class="rotate" src="assets/img/icon/thief.png"></div>
             <div class="col-md-10"><h2>Reporte o crime aqui!</h2></div>
             <p>Ajude-nos a coletar informações sobre os dados do crime que ocorreu com você clicando no botão abaixo.</p>
-            <a href="confirm" class="btn wow tada btn-embossed btn-success animated animated uppercase" style="visibility: visible;">Preencher informações</a>
+            <a href="confirm" class="btn wow tada btn-success animated animated uppercase" style="visibility: visible;">Preencher informações</a>
         </div>
     </div>
 </section>
@@ -134,20 +134,19 @@
                         <div class="form-group">
                             <label for="message">Mensagem</label>
                             <div class="input-group">
-                                <textarea name="message" id="message" class="form-control" rows="5" required=""></textarea>
+                                <textarea name="message" id="message" class="form-control" rows="5" required></textarea>
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
                             </div>
                         </div>
-                        <input type="submit" name="submit" id="submit" value="Submit" class="btn wow tada btn-embossed btn-primary pull-right animated animated" style="visibility: visible;">
+                        <input type="submit" name="submit" id="submit" value="Enviar" class="btn wow tada btn-primary pull-right animated animated uppercase" style="visibility: visible;">
                     </div>
                 </form>
                 <hr class="featurette-divider hidden-lg">
                     <div class="col-md-5 col-md-push-1 address">
                         <address>
-                        <h3>Onde estamos</h3>
-                        <p class="lead"><a href="https://www.google.com.br/maps/place/R.+do+Ouvidor,+90+-+Centro,+Rio+de+Janeiro+-+RJ,+20040-030/@-22.9031712,-43.1795134,17z/data=!3m1!4b1!4m5!3m4!1s0x997f5ee3767063:0x841942c7bca59ebb!8m2!3d-22.9031712!4d-43.1773247">Rua do Ouvidor, 90<br>
-                        Rio de Janeiro, RJ 20040-030</a>
-                        Telefone: +55 21 3190 1971</p>
+                        	<h3>Onde estamos</h3>
+                        	<p class="lead">
+                            	<a href="https://www.google.com.br/maps/search/campus+da+praia+vermelha+uff/@-22.9049549,-43.1335398,18z/data=!3m1!4b1">Campus da Praia Vermelha<br>Niterói - RJ - Brasil</p>
                         </address>
     
                         <h3>Social</h3>

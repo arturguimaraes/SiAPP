@@ -38,13 +38,9 @@
             <div class="col-md-12 mapDiv margin-bottom-20">
                 <input id="pac-input" name="pac-input" class="controls" type="text" placeholder="Procurar endereço">
                 <div id="map"></div>
-                <!-- Map Javascript Function -->
-                <script src="assets/js/map.js"></script>    
-                <!-- Google Maps API -->
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx7RRomppFzBUCQfToBi22kF2UsdEU6Iw&libraries=places&callback=initAutocomplete"></script>
             </div>
             <div class="col-md-12  margin-bottom-20">
-            	<button class="btn btn-danger uppercase" onclick="updateAddress()">Foi aqui!</button>
+            	<button class="btn wow tada btn-danger animated animated uppercase" style="visibility: visible;" onclick="updateAddress()">Foi aqui!</button>
             </div>
         </div>
     </div>
@@ -56,7 +52,7 @@
         <div class="col-md-8 col-md-offset-2 margin-bottom-20">
             <div class="col-md-2"><img class="rotate" src="assets/img/icon/retina.png"></div>
             <div class="col-md-10 margin-bottom-50"><h2>Confirme o endereço</h2></div>
-            <form id="createForm" class="form-horizontal col-md-12" method="post">
+            <form class="form-horizontal col-md-12" method="post">
               <fieldset>
                 <div class="form-group col-md-12">
                 	<label class="control-label col-md-2" for="street">Rua</label>
@@ -93,42 +89,23 @@
                 <div class="form-group col-md-5 margin-top-20"></div>
                 <div class="form-group col-md-6 margin-top-20">
                 	<div class="col-md-6">
-                		<button class="btn btn-warning uppercase" onclick="backToAddress()">Voltar</button>
+                		<button class="btn wow tada btn-warning animated animated uppercase" style="visibility: visible;" onclick="backToAddress()">Voltar</button>
                 	</div>
                     <div class="col-md-6">
-                		<button class="btn btn-success uppercase" onclick="toData()">Confirmar</button>
+                    	<input type="submit" name="submit" id="submit" value="Confirmar" onclick="fillLatLng()" class="btn wow tada btn-success animated animated uppercase" style="visibility: visible;">
                 	</div>
                 </div>
-            </div>
+                <input type="hidden" class="form-control" id="latitude" name="latitude">
+                <input type="hidden" class="form-control" id="longitude" name="longitude">
+                <input type="hidden" class="form-control" id="description" name="description">
               </fieldset>
             </form>
 		</div>
 	</div>
 </section>
 
-<!-- DADOS -->
-<section id="data" class="container content-section text-center hidden">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2 margin-bottom-20">
-        	<div class="col-md-2"><img class="rotate" src="assets/img/icon/clipboard.png"></div>
-            <div class="col-md-10 margin-bottom-50"><h2>Informe os dados</h2></div>
-            <form id="createForm" class="form-horizontal col-md-12" method="post">
-              <fieldset>
-              	<div class="col-md-6">
-                    <button class="btn btn-warning uppercase" onclick="backToConfirm()">Voltar</button>
-                </div>
-                
-                <legend>Outros dados do roubo</legend>
-              	<div class="form-group col-md-2"></div>
-                <div class="form-group col-md-9">
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
-                    <br><input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Sobrenome">
-                </div> 
-                <div class="form-group col-md-12">
-                    <button type="submit" class="btn btn-success" name="submit">Enviar</button>
-                </div>    
-              </fieldset>
-            </form>
-		</div>
-	</div>
-</section>
+<!-- Map Javascript Function -->
+<script src="assets/js/map.js"></script>    
+
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbjgN0GWbj4OMywlxXGCUwyBx1RSpUk5w&libraries=places&callback=initAutocomplete"></script>

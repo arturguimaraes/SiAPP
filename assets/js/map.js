@@ -141,23 +141,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Erro: O seu navegador não suporta geolocation.');
 }
 
-function backToAddress() {
-	$("#findPlace").removeClass('hidden');
-	$("#confirm").addClass('hidden');
-	$("#data").addClass('hidden');
-}
-
-function toData() {
-	/*$("#findPlace").addClass('hidden');
-	$("#confirm").addClass('hidden');
-	$("#data").removeClass('hidden');*/
-	var name = droppedPin.name.replaceAll(" ", "%");
-	var lat = droppedPin.geometry.location.lat();
-	var lng = droppedPin.geometry.location.lng();
-	var url = window.location.origin + '/inform?lat=' + lat + '&lng=' + lng + '&name=' + name;
-	window.location = url;
-}
-
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
@@ -167,20 +150,17 @@ function updateAddress() {
 	if (droppedPin == null)
 		alert("Escolha um endereço válido!");
 	else {
-		$("#findPlace").addClass('hidden');
-		$("#confirm").removeClass('hidden');
-		$("#data").addClass('hidden');
+		confirmAddress();
+		var address = [];
+		if (droppedPin.address_components != null)
+			if (droppedPin.address_components.length > 0) 
+				address = getAddressArray(droppedPin.address_components);
 		
-		if (droppedPin.address_components != null) {
-			if (droppedPin.address_components.length > 0) {
-				var address = getAddressArray(droppedPin.address_components);
-				$("[name='street'").val(getValue(address['street']));
-				$("[name='number'").val(getValue(address['number']));
-				$("[name='city'").val(getValue(address['city']));
-				$("[name='state'").val(getValue(address['state']));
-				$("[name='postal_code'").val(getValue(address['postal_code']));
-			}
-		}
+		$("[name='street'").val(getValue(address['street']));
+		$("[name='number'").val(getValue(address['number']));
+		$("[name='city'").val(getValue(address['city']));
+		$("[name='state'").val(getValue(address['state']));
+		$("[name='postal_code'").val(getValue(address['postal_code']));
 		$("[name='placeName'").val(getValue(droppedPin.name));
 	}
 }
@@ -214,6 +194,24 @@ function getAddressArray(address) {
 		}
 	}
 	return addressArray;
+}
+
+function confirmAddress() {
+	$("#findPlace").addClass('hidden');
+	$("#confirm").removeClass('hidden');
+	$("#data").addClass('hidden');
+}
+
+function backToAddress() {
+	$("#findPlace").removeClass('hidden');
+	$("#confirm").addClass('hidden');
+	$("#data").addClass('hidden');
+}
+
+function fillLatLng() {
+	$("[name='latitude'").val(droppedPin.geometry.location.lat());
+	$("[name='longitude'").val(droppedPin.geometry.location.lng());
+	$("[name='description'").val(droppedPin.name);
 }
 
 function getValue(string) {
