@@ -88,10 +88,10 @@
                 </div>
                 <div class="form-group col-md-5 margin-top-20"></div>
                 <div class="form-group col-md-6 margin-top-20">
-                	<div class="col-md-6">
+                	<div class="col-md-6 margin-bottom-20">
                 		<button class="btn wow tada btn-warning animated animated uppercase" style="visibility: visible;" onclick="backToAddress()">Voltar</button>
                 	</div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 margin-bottom-20">
                     	<input type="submit" name="submit" id="submit" value="Confirmar" onclick="fillLatLng()" class="btn wow tada btn-success animated animated uppercase" style="visibility: visible;">
                 	</div>
                 </div>

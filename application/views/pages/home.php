@@ -20,6 +20,9 @@
                     <a href="#about">Sobre</a>
                 </li>
                 <li class="page-scroll menu-item">
+                    <a href="#howitworks">Como funciona</a>
+                </li>
+                <li class="page-scroll menu-item">
                     <a href="#theft">Reportar um crime</a>
                 </li>
                 <li class="page-scroll menu-item">
@@ -69,11 +72,9 @@
 <section id="about" class="container content-section text-center margin-bottom-50" style="border-top: 0px; margin-top: 0px;">
     <div class="container">
     	<!-- ABOUT TITLE -->
-        <div class="col-md-7 col-md-offset-2 text-center wrap_title animated animated" style="visibility: visible; animation-name: fadeInDown;">
-            <div class="col-md-2"><img class="rotate" src="assets/img/icon/qmark.png"></div>
-            <div class="col-md-10"><h2>Quem somos?</h2></div>
-            <p class="lead" style="margin-top:0">O SiAPP é um Sistema para Análise de Ocorrências de Crimes Baseado em Aprendizado Lógico-Relacional.
-            </p>
+        <div class="col-md-8 col-md-offset-2 text-center wrap_title animated animated" style="visibility: visible; animation-name: fadeInDown;">
+            <div class="col-md-12"><h2>Quem somos?</h2></div>
+            <p class="lead" style="margin-top:0">O SiAPP é um Sistema para Análise de Ocorrências de Crimes Baseado em Aprendizado Lógico-Relacional.</p>
         </div>
         
         <!-- ABOUT FIRST ROW -->
@@ -96,8 +97,43 @@
     </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<section id="howitworks" class="content-section content-section-c text-center">
+    <div class="container">
+        <!-- HOW IT WORKS TITLE -->
+        <div class="col-md-8 col-md-offset-2 text-center wrap_title">
+            <h2>Como funciona o SiAPP?</h2>
+            <p class="lead" style="margin-top:0">O SiAPP funciona de maneira muito simples! Explicaremos a seguir o processo.</p>
+        </div>
+        
+        <!-- HOW IT WORKS ICONS FIRST ROW -->
+        <div class="row">
+            <div class="col-sm-6 fadeInDown text-center animated animated margin-bottom-20" style="visibility: visible; animation-name: fadeInDown;">
+                <img class="rotate" src="assets/img/icon/map.png" alt="Encontrar o local">
+                <h3>Encontre o local em que houve o crime</h3>
+            </div>
+            <div class="col-sm-6 fadeInDown text-center animated animated margin-bottom-20" style="visibility: visible; animation-name: fadeInDown;">
+                <img class="rotate" src="assets/img/icon/retina.png" alt="Confirmar endereço">
+                <h3>Confirme o endereço escolhido</h3>
+            </div>
+        </div>
+        
+        <!-- HOW IT WORKS ICONS SECOND ROW -->
+        <div class="row tworow">
+            <div class="col-sm-6 fadeInDown text-center animated animated margin-bottom-20" style="visibility: visible; animation-name: fadeInDown;">
+                <img class="rotate" src="assets/img/icon/clipboard.png" alt="Informar os dados do crime">
+                <h3>Forneça informações sobre o crime, como a data, hora e objetos perdidos.</h3>
+            </div>
+            <div class="col-sm-6 fadeInDown text-center animated animated margin-bottom-20" style="visibility: visible; animation-name: fadeInDown;">
+                <img class="rotate" src="assets/img/icon/like.png" alt="Generic placeholder image">
+                <h3>O resto é com a gente! Suas informações serão enviadas em sigilo para o nosso sistema.</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- FILL INFO -->
-<section id="theft" class="content-section content-section-c text-center">
+<section id="theft" class="container content-section text-center">
     <div class="container">
         <div class="col-md-8 col-md-offset-2 margin-bottom-50">
             <div class="col-md-2"><img class="rotate" src="assets/img/icon/thief.png"></div>
@@ -109,12 +145,14 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="container content-section text-center">
+<section id="contact" class="content-section content-section-c text-center">
 	<div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 margin-bottom-50">
+            <div class="col-md-8 col-md-offset-2 margin-bottom-20">
             	<div class="col-md-2"><img class="rotate" src="assets/img/icon/mail.png"></div>
                 <div class="col-md-10"><h2>Entre em contato!</h2></div>
+            </div>
+            <div class="col-md-8 col-md-offset-2 margin-bottom-50">
                 <form role="form" action="" method="post">
                     <div class="col-md-6">
                         <div class="form-group">

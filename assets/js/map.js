@@ -18,7 +18,18 @@ function initAutocomplete() {
 	// Create the search box and link it to the UI element.
 	var input = document.getElementById('pac-input');
 	var searchBox = new google.maps.places.SearchBox(input);
-	map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+	
+	//Checks if user agent is mobile
+	var mobileAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	
+	//Decides search box's position depending on screen's size and user agent type
+	if (mobileAgent && screen.width <= 500)
+		var searchBoxPostion = google.maps.ControlPosition.LEFT_TOP;
+	else
+		var searchBoxPostion = google.maps.ControlPosition.TOP_LEFT;
+	
+	//Sets the position of the Search Box
+	map.controls[searchBoxPostion].push(input)
 	
 	// Bias the SearchBox results towards current map's viewport.
 	map.addListener('bounds_changed', function() {

@@ -319,6 +319,12 @@ footer {
 }
 
 /***************PHONE CUSTOMIZATION***************/
+@media only screen and (max-width: 360px) {
+	#pac-input {
+		width: 230px;
+	}
+
+/***************PHONE CUSTOMIZATION***************/
 @media only screen and (max-width: 767px) {
 	h1, .h1 {
     	font-size: 50px !important;
