@@ -20,88 +20,15 @@
                     <a href="<?=$baseURL?>">Home</a>
                 </li>
                 <li class="page-scroll menu-item">
-                    <a href="<?=$baseURL?>inform">Reportar Crime</a>
+                    <a href="<?=$baseURL?>inform">Informar Dados</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- ENCONTRE O LOCAL -->
-<section id="findPlace" class="container content-section text-center">
-    <div class="row">
-        <div class="col-md-12 margin-bottom-50">
-            <div class="col-md-8 col-md-offset-2 margin-bottom-20">
-                <div class="col-md-2"><img class="rotate" src="assets/img/icon/map.png"></div>
-                <div class="col-md-10"><h2>Encontre o local do crime</h2></div>
-            </div>
-            <div class="col-md-12 mapDiv margin-bottom-20">
-                <input id="pac-input" name="pac-input" class="controls" type="text" placeholder="Procurar endereço">
-                <div id="map"></div>
-                <!-- Map Javascript Function -->
-                <script src="assets/js/map.js"></script>    
-                <!-- Google Maps API -->
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx7RRomppFzBUCQfToBi22kF2UsdEU6Iw&libraries=places&callback=initAutocomplete"></script>
-            </div>
-            <div class="col-md-12  margin-bottom-20">
-            	<button class="btn btn-danger uppercase" onclick="updateAddress()">Foi aqui!</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CONFIRME O ENDEREÇO -->
-<section id="confirm" class="container content-section text-center hidden">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2 margin-bottom-20">
-            <div class="col-md-2"><img class="rotate" src="assets/img/icon/retina.png"></div>
-            <div class="col-md-10 margin-bottom-50"><h2>Confirme o endereço</h2></div>
-            <form id="createForm" class="form-horizontal col-md-12" method="post">
-              <fieldset>
-                <div class="form-group col-md-12">
-                	<label class="control-label col-md-2" for="street">Rua</label>
-                	<div class="col-md-6">
-                		<input type="text" class="form-control text-align-center" id="street" name="street" disabled>
-                	</div>
-                    <label class="control-label col-md-2" for="number">Nº</label>
-                	<div class="col-md-2">
-                		<input type="text" class="form-control text-align-center" id="number" name="number" disabled>
-                	</div>
-                </div>
-                <div class="form-group col-md-12">
-                	<label class="control-label col-md-2" for="city">Cidade</label>
-                	<div class="col-md-6">
-                		<input type="text" class="form-control text-align-center" id="city" name="city" disabled>
-                	</div>
-                    <label class="control-label col-md-2" for="state">Estado</label>
-                	<div class="col-md-2">
-                		<input type="text" class="form-control text-align-center" id="state" name="state" disabled>
-                	</div>
-                </div>
-                <div class="form-group col-md-12">
-                	<label class="control-label col-md-2" for="postal_code">CEP</label>
-                	<div class="col-md-6">
-                		<input type="text" class="form-control text-align-center" id="postal_code" name="postal_code" disabled>
-                	</div>
-                </div>
-                <div class="form-group col-md-5 margin-top-20"></div>
-                <div class="form-group col-md-6 margin-top-20">
-                	<div class="col-md-6">
-                		<button class="btn btn-warning uppercase" onclick="backToAddress()">Voltar</button>
-                	</div>
-                    <div class="col-md-6">
-                		<button class="btn btn-success uppercase" onclick="toData()">Confirmar</button>
-                	</div>
-                </div>
-            </div>
-              </fieldset>
-            </form>
-		</div>
-	</div>
-</section>
-
 <!-- DADOS -->
-<section id="data" class="container content-section text-center hidden">
+<section id="data" class="container content-section text-center">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 margin-bottom-20">
         	<div class="col-md-2"><img class="rotate" src="assets/img/icon/clipboard.png"></div>

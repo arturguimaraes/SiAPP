@@ -56,4 +56,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 //OTHER ROUTES
+$route['confirm'] = 'pages/index/confirm';
 $route['inform'] = 'pages/index/inform';

@@ -103,7 +103,7 @@
             <div class="col-md-2"><img class="rotate" src="assets/img/icon/thief.png"></div>
             <div class="col-md-10"><h2>Reporte o crime aqui!</h2></div>
             <p>Ajude-nos a coletar informações sobre os dados do crime que ocorreu com você clicando no botão abaixo.</p>
-            <a href="inform" class="btn wow tada btn-embossed btn-success animated animated uppercase" style="visibility: visible;">Preencher informações</a>
+            <a href="confirm" class="btn wow tada btn-embossed btn-success animated animated uppercase" style="visibility: visible;">Preencher informações</a>
         </div>
     </div>
 </section>
