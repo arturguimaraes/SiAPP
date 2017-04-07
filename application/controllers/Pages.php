@@ -70,7 +70,8 @@ class Pages extends CI_Controller {
 		}
 		
 		$this->load->helper(array('form', 'url'));
-		$this->load->library('form_validation');
+		$this->load->library(array('form_validation'));
+		$this->load->model(array('geo_position','occurrence','objects'));
 		$this->form_validation->set_error_delimiters('<div class="error red-text italic margin-bottom-20">', '</div>');
 		
 		$data = $_GET;
@@ -110,8 +111,23 @@ class Pages extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 			$this->loadPage('inform', $data);
-		else
+		else {
+			$insertedGeoPosition = $this->geo_position->create($_POST['latitude'], $_POST['longitude'], $_POST['description']);
+			$insertedOccurrence = $this->occurrence->create($_POST['occurrence_type'], $_POST['date'], $insertedGeoPosition);
+			
+			$insertedObjects = array();
+			for($i = 1; $i <= $objNumber; $i++) {
+				$insertedObject = $this->objects->create($_POST['object' . $i], $insertedOccurrence);
+				array_push($insertedObjects, $insertedObject);
+			}
+			
+			//$nearbyPlaces = $this->getNearbyPlaces($_POST['latitude'], $_POST['longitude']);
+
+			//var_dump($_POST);
+			//var_dump($nearbyPlaces);
+			
 			$this->loadPage('success', $data);
+		}
 	}
 	
 	public function success($page) {		
@@ -122,4 +138,49 @@ class Pages extends CI_Controller {
 		
 		$this->loadPage($page, $data);
 	}
+	
+	public function getNearbyPlaces($latitude, $longitude) {
+		 /*$data = array(
+			'key'      	=> 'AIzaSyCbjgN0GWbj4OMywlxXGCUwyBx1RSpUk5w',
+			'location'	=> $latitude . ',' . $longitude,
+			'radius'    => '500',
+			'rankby'	=> 'prominence'
+		);
+		
+		//https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyCbjgN0GWbj4OMywlxXGCUwyBx1RSpUk5w&location=-22.934498,-43.1897039&radius=500&rankby=prominence
+		//https://maps.googleapis.com/maps/api/place/nearbysearch/xml?key=AIzaSyCbjgN0GWbj4OMywlxXGCUwyBx1RSpUk5w&location=-22.934498,-43.1897039&radius=500&rankby=prominence
+			
+		$url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
+		 
+		$headers = array (
+			"key: 		{AIzaSyCbjgN0GWbj4OMywlxXGCUwyBx1RSpUk5w}",
+			"location: 	{-22.934498,-43.1897039}",
+			"radius: 	{500}",
+			"rankby: 	{prominence}"		
+		);	
+		 
+		$ch = curl_init(); 
+		
+		// set url
+        curl_setopt($ch, CURLOPT_URL, $url);
+ 
+        // set browser specific headers
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+ 
+        // we don't want the page contents
+        curl_setopt($ch, CURLOPT_NOBODY, 1);
+ 
+        // we need the HTTP Header returned
+        curl_setopt($ch, CURLOPT_HEADER, 1);
+ 
+        // return the results instead of outputting it
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+ 
+        $output = curl_exec($ch);
+ 
+        curl_close($ch);
+		
+		return $output;*/
+	}
+	
 }

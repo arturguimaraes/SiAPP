@@ -81,7 +81,7 @@ function addMarker(map, position, markerTitle, iconUrl) {
 		map: map,
 		icon: icon,
 		title: markerTitle,
-		draggable: true,
+		draggable: false,
 		animation: google.maps.Animation.DROP,
 		position: position
 	});
@@ -210,13 +210,11 @@ function getAddressArray(address) {
 function confirmAddress() {
 	$("#findPlace").addClass('hidden');
 	$("#confirm").removeClass('hidden');
-	$("#data").addClass('hidden');
 }
 
 function backToAddress() {
 	$("#findPlace").removeClass('hidden');
 	$("#confirm").addClass('hidden');
-	$("#data").addClass('hidden');
 }
 
 function fillLatLng() {
