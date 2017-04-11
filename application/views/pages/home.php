@@ -84,7 +84,7 @@
             </div>
             <div class="col-md-4 fadeInDown text-center animated animated" style="visibility: visible; animation-name: fadeInDown;">
         		<p>Você pode ajudar a previnir próximos crimes!</p>
-                <p>O SiAPP utiliza uma inteligência artificial para calcular e prever crimes em certas áreas e horários, de acordo com os dados recebidos. Ou seja, quanto mais dados, melhor a predição!</p>
+                <p>O SiAPP utiliza inteligência artificial para calcular e prever crimes em certas áreas e horários, de acordo com os dados recebidos. Ou seja, quanto mais dados, melhor a predição!</p>
                 <p>Forneça dados sobre crimes que já aconteceram com VOCÊ e nos ajude previnir próximos crimes! Você certamente será beneficiado também!</p>
             </div>					
         </div>

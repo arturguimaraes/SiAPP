@@ -49,10 +49,10 @@
                         <div class="col-md-5">
                             <select class="form-control" id="occurrence_type" name="occurrence_type">
                                 <option value="">-</option>
-                                <option <?php if(set_value('occurrence_type') == '1'){echo("selected");}?> value="0">Assalto sem arma</option>
-                                <option <?php if(set_value('occurrence_type') == '2'){echo("selected");}?> value="1">Assalto à mão armada</option>
-                                <option <?php if(set_value('occurrence_type') == '3'){echo("selected");}?> value="2">Furto</option>
-                                <option <?php if(set_value('occurrence_type') == '4'){echo("selected");}?> value="3">Sequestro</option>			
+                                <option <?php if(set_value('occurrence_type') == '1'){echo("selected");}?> value="1">Assalto sem arma</option>
+                                <option <?php if(set_value('occurrence_type') == '2'){echo("selected");}?> value="2">Assalto à mão armada</option>
+                                <option <?php if(set_value('occurrence_type') == '3'){echo("selected");}?> value="3">Furto</option>
+                                <option <?php if(set_value('occurrence_type') == '4'){echo("selected");}?> value="4">Sequestro</option>			
                             </select>
                         </div>
                     </div>
@@ -121,6 +121,7 @@
                     </div>
                 	<input type="hidden" class="form-control" id="latitude" name="latitude" value="<?=$lat?>">
                     <input type="hidden" class="form-control" id="longitude" name="longitude" value="<?=$lng?>">
+                    <input type="hidden" class="form-control" id="description" name="description" value="<?=$desc?>">
                 </fieldset>
         	</form>
 		</div>
