@@ -203,6 +203,10 @@ li {
     .intro-text {
         font-size: 25px;
     }
+
+    .mapDiv {
+        height: 600px;
+    }
 }
 
 .btn-circle {

@@ -31,8 +31,11 @@ function initAutocomplete() {
 	// Sets the position of the Search Box
 	map.controls[searchBoxPostion].push(input)
 	
+	// Sets infoWindow
+	var infoWindow = new google.maps.InfoWindow();
+
 	// Try HTML5 geolocation.
-	geolocation(map);
+	//geolocation(map, infoWindow);
 	//Tentar atualizar o droppedPin
 	//refreshDroppedPin(map, pos, "Sua localização atual");
 	
@@ -47,7 +50,7 @@ function initAutocomplete() {
 		clearMarkers();
 
 		// Gets info in mouse's latitude and longitude
-		geocodeLatLng(map, e.latLng);
+		geocodeLatLng(map, infoWindow, e.latLng);
 
 		if (droppedPin != null) 
 			refreshDroppedPin(map, e.latLng, droppedPin.name);
@@ -84,7 +87,7 @@ function initAutocomplete() {
 	});
 }
 
-function geolocation(map) {
+function geolocation(map, infoWindow) {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			var pos = {
@@ -111,10 +114,9 @@ function geolocation(map) {
 	}
 }
 
-function geocodeLatLng(map, latlng) {
+function geocodeLatLng(map, infoWindow, latlng) {
 	// Sets the geocoder and infoWindow
 	var geocoder = new google.maps.Geocoder;
-	var infoWindow = new google.maps.InfoWindow();
 
 	geocoder.geocode({'location': latlng}, function(results, status) {
 		if (status === 'OK') {
