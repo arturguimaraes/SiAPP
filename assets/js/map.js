@@ -19,26 +19,41 @@ function initAutocomplete() {
 	var input = document.getElementById('pac-input');
 	var searchBox = new google.maps.places.SearchBox(input);
 	
-	//Checks if user agent is mobile
+	// Checks if user agent is mobile
 	var mobileAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 	
-	//Decides search box's position depending on screen's size and user agent type
+	// Decides search box's position depending on screen's size and user agent type
 	if (mobileAgent && screen.width <= 500)
 		var searchBoxPostion = google.maps.ControlPosition.LEFT_TOP;
 	else
 		var searchBoxPostion = google.maps.ControlPosition.TOP_LEFT;
 	
-	//Sets the position of the Search Box
+	// Sets the position of the Search Box
 	map.controls[searchBoxPostion].push(input)
+	
+	// Try HTML5 geolocation.
+	geolocation(map);
+	//Tentar atualizar o droppedPin
+	//refreshDroppedPin(map, pos, "Sua localização atual");
 	
 	// Bias the SearchBox results towards current map's viewport.
 	map.addListener('bounds_changed', function() {
 		searchBox.setBounds(map.getBounds());
 	});
-	
-	// Try HTML5 geolocation.
-	//geolocation(map);
-	
+
+	// Adds a click listener to add marker
+	map.addListener('click', function(e) {
+   		// Clears old markers
+		clearMarkers();
+
+		// Gets info in mouse's latitude and longitude
+		geocodeLatLng(map, e.latLng);
+
+		if (droppedPin != null) 
+			refreshDroppedPin(map, e.latLng, droppedPin.name);
+
+  	});
+
 	// Listen for the event fired when the user selects a prediction and retrieve
 	// more details for that place.
 	searchBox.addListener('places_changed', function() {
@@ -47,19 +62,19 @@ function initAutocomplete() {
 		if (places.length == 0)
 			return;
 		
-		//Clears old markers
+		// Clears old markers
 		clearMarkers();
 		
 		// For each place, get the icon, name and location.
 		var bounds = new google.maps.LatLngBounds();
 		places.forEach(function(place) {
-			//Plot marker
+			// Plot marker
 			addMarker(map, place.geometry.location, place.name, place.icon);			
 			
-			//Gets the chosen place
+			// Gets the chosen place
 			droppedPin = place;
 			
-			//Only geocodes have viewport.
+			// Only geocodes have viewport.
 			if (place.geometry.viewport)
 				bounds.union(place.geometry.viewport);
 			else
@@ -67,6 +82,62 @@ function initAutocomplete() {
 		});
 		map.fitBounds(bounds);
 	});
+}
+
+function geolocation(map) {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			var pos = {
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+			};
+			
+			// Clears old markers
+			clearMarkers();
+
+			// Adds markers to your location
+			addMarker(map, pos, "Sua localização atual", "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png");
+   			
+   			// Pans to your location
+   			map.panTo(pos);
+   			map.setZoom(17);
+
+		}, function() {
+			handleLocationError(true, infoWindow, map.getCenter());
+		});
+	} else {
+		// Browser doesn't support Geolocation
+		handleLocationError(false, infoWindow, map.getCenter());
+	}
+}
+
+function geocodeLatLng(map, latlng) {
+	// Sets the geocoder and infoWindow
+	var geocoder = new google.maps.Geocoder;
+	var infoWindow = new google.maps.InfoWindow();
+
+	geocoder.geocode({'location': latlng}, function(results, status) {
+		if (status === 'OK') {
+			if (results[1]) {
+				droppedPin = results[1];
+				droppedPin.name = results[1].formatted_address;
+			} else {
+				console.log('No results found');
+			}
+		} else {
+			console.log('Geocoder failed due to: ' + status);
+		}
+	});
+}
+
+function refreshDroppedPin(map, pos, markerDescription) {
+	if (droppedPin != null) {
+ 		// Adds a marker in your location
+   		addMarker(map, pos, markerDescription, "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png");
+   		// Pans to your location
+   		map.panTo(pos);
+   		map.setZoom(17);
+   	}
 }
 
 function addMarker(map, position, markerTitle, iconUrl) {
@@ -90,51 +161,13 @@ function addMarker(map, position, markerTitle, iconUrl) {
 	// Create a marker for each place.
 	markers.push(marker);
 	
-	//Creates the info balloon for each marker
+	// Creates the info balloon for each marker
 	google.maps.event.addListener(marker, 'click', (function(marker) {
 		return function() {
 			infoWindow.setContent(markerTitle);
 			infoWindow.open(map, marker);
 		}
 	})(marker));
-}
-
-function geolocation(map) {
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			var pos = {
-				lat: position.coords.latitude,
-				lng: position.coords.longitude
-			};
-			map.setCenter(pos);
-			
-			//Clears old markers
-			clearMarkers();
-
-			/*var request = {
-				location: pos,
-				radius: 500,
-				types: ['street_address']
-			};
-			var service = new google.maps.places.PlacesService(map);
-			service.nearbySearch(request, function callback(results, status) {
-				if (status === google.maps.places.PlacesServiceStatus.OK) {
-					for (var i = 0; i < results.length; i++) {
-				  		alert(results[i]);
-					}
-				}
-			});*/
-			
-			//Plot marker
-			addMarker(map, pos, "Sua localização atual", "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png");
-						
-		}, function() {
-			handleLocationError(true, infoWindow, map.getCenter());
-		});
-	} else {
-		// Browser doesn't support Geolocation
-		handleLocationError(false, infoWindow, map.getCenter());
-	}
 }
 
 function clearMarkers() {
@@ -152,14 +185,9 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Erro: O seu navegador não suporta geolocation.');
 }
 
-String.prototype.replaceAll = function(search, replacement) {
-    var target = this;
-    return target.replace(new RegExp(search, 'g'), replacement);
-};
-
 function updateAddress() {
 	if (droppedPin == null)
-		alert("Escolha um endereço válido!");
+		alert("Escolha um endereço válido!\nClique em algum lugar no mapa ou digite no campo de pesquisa.");
 	else {
 		confirmAddress();
 		var address = [];
@@ -230,3 +258,8 @@ function getValue(string) {
 		return '-';
 	return string;	
 }
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};

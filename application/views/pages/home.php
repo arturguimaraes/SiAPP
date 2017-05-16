@@ -25,9 +25,9 @@
                 <li class="page-scroll menu-item">
                     <a href="#theft">Reportar um crime</a>
                 </li>
-                <li class="page-scroll menu-item">
+                <!--<li class="page-scroll menu-item">
                     <a href="#contact">Contato</a>
-                </li>
+                </li>-->
             </ul>
         </div>
         <script>
@@ -45,23 +45,23 @@
 <!-- HOME INTRODUCTION -->
 <section class="intro">
     <div class="intro-body">
-        <div class="col-xs-12 text-center absolute-20 no-padding-margin"  style="margin-top:10%;">
-            <div class="col-xs-12 title-intro no-padding-margin animated fadeIn">
+        <div class="intro-container col-xs-12 text-center absolute-20 no-padding-margin">
+            <div class="col-xs-12 title-intro no-padding-margin animated bounceInLeft">
                 <img class="centered-inline img-intro rotate" src="assets/img/icon/thief.png">
                 <h1 class="h1-intro centered-inline">SiAPP</h1>
             </div>
-            <div class="col-xs-12 subtitle-intro no-padding-margin animated fadeIn">
+            <div class="col-xs-12 subtitle-intro no-padding-margin animated bounceInLeft">
             	<h3 class="h3-intro">Um Sistema para Análise de Ocorrências de Crimes em Niterói</h3>
             </div>
             <ul class="col-xs-12 list-inline">
-                <li class="page-scroll uppercase"><a href="#theft" class="btn btn-lg btn-red animated fadeIn" style="visibility: visible; animation-delay: 1.2s;"><span class="network-name">Reportar um crime</span></a>
+                <li class="page-scroll uppercase"><a href="#theft" class="btn btn-lg btn-red animated bounceInLeft" style="visibility: visible; animation-delay: 1.2s;"><span class="network-name">Reportar um crime</span></a>
                 </li>
             </ul>
         </div>
         <div class="col-xs-12 text-center absolute-8">
             <div class="page-scroll">
                 <a href="#about" class="btn btn-circle">
-                    <i class="fa fa-angle-double-down animated"></i>
+                    <i class="fa fa-hand-o-down animated"></i>
                 </a>
             </div>
         </div>
@@ -88,12 +88,6 @@
                 <p>Forneça dados sobre crimes que já aconteceram com VOCÊ e nos ajude previnir próximos crimes! Você certamente será beneficiado também!</p>
             </div>					
         </div>
-        <!--<div
-          class="row tworow fb-like"
-          data-share="true"
-          data-width="450"
-          data-show-faces="true">
-        </div>-->
     </div>
 </section>
 
@@ -113,7 +107,7 @@
                 <h3>Encontre o local em que houve o crime</h3>
             </div>
             <div class="col-sm-6 fadeInDown text-center animated animated margin-bottom-20" style="visibility: visible; animation-name: fadeInDown;">
-                <img class="rotate" src="assets/img/icon/retina.png" alt="Confirmar endereço">
+                <img class="rotate" src="assets/img/icon/retina.png" alt="Confirmar endereÃ§o">
                 <h3>Confirme o endereço escolhido</h3>
             </div>
         </div>
@@ -139,13 +133,13 @@
             <div class="col-md-2"><img class="rotate" src="assets/img/icon/thief.png"></div>
             <div class="col-md-10"><h2>Reporte o crime aqui!</h2></div>
             <p>Ajude-nos a coletar informações sobre os dados do crime que ocorreu com você clicando no botão abaixo.</p>
-            <a href="confirm" class="btn wow tada btn-success animated animated uppercase" style="visibility: visible;">Preencher informações</a>
+            <a href="confirm.php" class="btn wow tada btn-danger animated animated uppercase" style="visibility: visible;">Preencher informações</a>
         </div>
     </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="content-section content-section-c text-center">
+<!--<section id="contact" class="content-section content-section-c text-center">
 	<div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 margin-bottom-20">
@@ -184,7 +178,7 @@
                         <address>
                         	<h3>Onde estamos</h3>
                         	<p class="lead">
-                            	<a href="https://www.google.com.br/maps/search/campus+da+praia+vermelha+uff/@-22.9049549,-43.1335398,18z/data=!3m1!4b1">Campus da Praia Vermelha<br>Niterói - RJ - Brasil</p>
+                            	<a href="https://www.google.com.br/maps/search/campus+da+praia+vermelha+uff/@-22.9049549,-43.1335398,18z/data=!3m1!4b1">UFF - Campus da Praia Vermelha<br>NiterÃ³i - RJ - Brasil</p>
                         </address>
     
                         <h3>Social</h3>
@@ -199,4 +193,4 @@
             </div>
         </div>
 	</div>
-</section>
+</section>-->

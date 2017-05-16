@@ -8,7 +8,10 @@ class Pages extends CI_Controller {
 	}
 	
 	public function index($page = 'home') {
-		if ($page == 'home')
+		if(substr($_SERVER['PHP_SELF'], 1, -4) != 'index')
+      $page = substr($_SERVER['PHP_SELF'], 1, -4);
+    
+    if ($page == 'home')
 			$data = $this->home($page);
 		if ($page == 'confirm')
 			$data = $this->confirm($page);
@@ -27,7 +30,7 @@ class Pages extends CI_Controller {
 	}
 	
 	public function home($page) {
-		$data['pageTitle'] = ' - Um Sistema para Análise de Ocorrências de Crimes em Niterói';
+		$data['pageTitle'] = ' - Um Sistema para AnÃ¡lise de OcorrÃªncias de Crimes em NiterÃ³i';
 		
 		//SEND E-MAIL FORM
 		if (isset($_POST['submit'])) {
@@ -57,7 +60,7 @@ class Pages extends CI_Controller {
 		
 		if (isset($_POST['submit'])) {
 			$attrs = "lat=" . $_POST['latitude'] . "&lng=" . $_POST['longitude'] . "&desc=" . urlencode($_POST['description']);
-			redirect('/inform?' . $attrs, 'refresh');
+			redirect('/inform.php?' . $attrs, 'refresh');
 		}
 		
 		$this->loadPage($page, $data);
@@ -83,15 +86,15 @@ class Pages extends CI_Controller {
 		$config = array(
 				array(
 						'field' => 'occurrence_type',
-						'label' => 'Tipo de Ocorrência',
+						'label' => 'Tipo de OcorrÃªncia',
 						'rules' => 'required',
-						'errors' => array('required' => '*%s é necessário.')
+						'errors' => array('required' => '*%s Ã© necessÃ¡rio.')
 				),
 				array(
 						'field' => 'date',
 						'label' => 'Data / Hora',
 						'rules' => 'required',
-						'errors' => array('required' => '*%s é necessário.')
+						'errors' => array('required' => '*%s Ã© necessÃ¡rio.')
 				)
 		);
 		
@@ -100,20 +103,22 @@ class Pages extends CI_Controller {
 		for($i = 1; $i <= $objNumber; $i++) {
 			$rule = array(
 							'field' => 'object' . $i,
-							'label' => 'Descrição do Objeto ' . $i,
+							'label' => 'Objeto ' . $i,
 							'rules' => 'required',
-							'errors' => array('required' => '*%s é necessário.')
+							'errors' => array('required' => '*%s Ã© necessÃ¡rio.')
 					);
 			array_push($config, $rule);
 		}
 		
 		$this->form_validation->set_rules($config);
 
+		//var_dump($_POST);
+
 		if ($this->form_validation->run() == FALSE)
 			$this->loadPage('inform', $data);
 		else {
 			$insertedGeoPosition = $this->geo_position->create($_POST['latitude'], $_POST['longitude'], $_POST['description']);
-			$insertedOccurrence = $this->occurrence->create($_POST['occurrence_type'], $_POST['date'], $insertedGeoPosition);
+			$insertedOccurrence = $this->occurrence->create($_POST['occurrence_type'], $_POST['date'], $_POST['sex'], $_POST['value'], $insertedGeoPosition);
 			
 			$insertedObjects = array();
 			for($i = 1; $i <= $objNumber; $i++) {

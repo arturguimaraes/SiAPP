@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="Artur Guimarães">
+    <meta name="author" content="Artur GuimarÃ£es">
 	
     <!-- Browser Info -->
     <link rel="icon" href="assets/img/icon/thief.png">
@@ -35,10 +35,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-	<!-- Facebook Javascript -->
-    <script src="assets/js/facebook.js"></script>
 	
-<!-- Page Content -->
-<!-- Footer -->
+    <!-- Page Content -->
+
+    <!-- Footer -->
+
 <!--</body>-->
 <!--</html>-->

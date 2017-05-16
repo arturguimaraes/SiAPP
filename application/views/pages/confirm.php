@@ -20,7 +20,7 @@
                     <a href="<?=$baseURL?>">Home</a>
                 </li>
                 <li class="page-scroll menu-item">
-                    <a href="<?=$baseURL?>confirm">Reportar Crime</a>
+                    <a href="<?=$baseURL?>confirm.php">Reportar Crime</a>
                 </li>
             </ul>
         </div>
@@ -34,6 +34,7 @@
             <div class="col-md-8 col-md-offset-2 margin-bottom-20">
                 <div class="col-md-2"><img class="rotate" src="assets/img/icon/map.png"></div>
                 <div class="col-md-10"><h2>Encontre o local do crime</h2></div>
+                <div class="col-md-12"><p style="margin: 30px 0 0 0;">Digite o endereço ou clique no mapa para encontrar o local do crime</h2></div>
             </div>
             <div class="col-md-12 mapDiv margin-bottom-20">
                 <input id="pac-input" name="pac-input" class="controls" type="text" placeholder="Procurar endereço">
@@ -108,4 +109,8 @@
 <script src="assets/js/map.js"></script>    
 
 <!-- Google Maps API -->
+<!-- API 1 - siapp-162502 -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbjgN0GWbj4OMywlxXGCUwyBx1RSpUk5w&libraries=places&callback=initAutocomplete"></script>
+
+<!-- API 2 - siapp-161621 -->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx7RRomppFzBUCQfToBi22kF2UsdEU6Iw&libraries=places&callback=initAutocomplete"></script>-->
