@@ -35,7 +35,7 @@
             <div class="col-md-10 margin-bottom-50"><h2>Informe os dados</h2></div>
             <form class="form-horizontal col-md-12" method="post">
                        
-                <p class="italic light-grey-text">* Todos os dados são confidenciais, podendo ser liberados apenas para a polí­cia local.</p>
+                <p class="italic light-grey-text">* Todos os dados são confidenciais, podendo ser liberados apenas para a polícia local.</p>
 
                 <!-- DADOS DO CRIME -->
                 <fieldset>   
@@ -94,7 +94,7 @@
                         </div>
                     </div> 
                     
-                    <? /* OBJETOS VISÃVEIS */ ?>
+                    <? /* OBJETOS VISÍVEIS */ ?>
                     <div id="objectDiv1" class="form-group col-md-12">
                         <label class="control-label col-md-4" for="object1">Objeto 1</label>
                         <div class="col-md-8">
@@ -137,7 +137,7 @@
 						$objNumber = 2; 
 					}
 					
-					/* OBJETOS INVISÃVEIS */
+					/* OBJETOS INVISÍVEIS */
 					for($i = $objNumber; $i <= 10; $i++) { ?>
                     	<div id="objectDiv<?=$i?>" class="form-group col-md-12 hidden">
                             <label class="control-label col-md-4" for="object<?=$i?>">Objeto <?=$i?></label>

@@ -107,7 +107,7 @@
                 <h3>Encontre o local em que houve o crime</h3>
             </div>
             <div class="col-sm-6 fadeInDown text-center animated animated margin-bottom-20" style="visibility: visible; animation-name: fadeInDown;">
-                <img class="rotate" src="assets/img/icon/retina.png" alt="Confirmar endereÃ§o">
+                <img class="rotate" src="assets/img/icon/retina.png" alt="Confirmar endereço">
                 <h3>Confirme o endereço escolhido</h3>
             </div>
         </div>
@@ -178,7 +178,7 @@
                         <address>
                         	<h3>Onde estamos</h3>
                         	<p class="lead">
-                            	<a href="https://www.google.com.br/maps/search/campus+da+praia+vermelha+uff/@-22.9049549,-43.1335398,18z/data=!3m1!4b1">UFF - Campus da Praia Vermelha<br>NiterÃ³i - RJ - Brasil</p>
+                            	<a href="https://www.google.com.br/maps/search/campus+da+praia+vermelha+uff/@-22.9049549,-43.1335398,18z/data=!3m1!4b1">UFF - Campus da Praia Vermelha<br>Niterói - RJ - Brasil</p>
                         </address>
     
                         <h3>Social</h3>

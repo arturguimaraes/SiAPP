@@ -30,7 +30,7 @@ class Pages extends CI_Controller {
 	}
 	
 	public function home($page) {
-		$data['pageTitle'] = ' - Um Sistema para AnÃ¡lise de OcorrÃªncias de Crimes em NiterÃ³i';
+		$data['pageTitle'] = ' - Um Sistema para Análise de Ocorrências de Crimes em Niterói';
 		
 		//SEND E-MAIL FORM
 		if (isset($_POST['submit'])) {
@@ -86,15 +86,15 @@ class Pages extends CI_Controller {
 		$config = array(
 				array(
 						'field' => 'occurrence_type',
-						'label' => 'Tipo de OcorrÃªncia',
+						'label' => 'Tipo de Ocorrência',
 						'rules' => 'required',
-						'errors' => array('required' => '*%s Ã© necessÃ¡rio.')
+						'errors' => array('required' => '*%s é necessário.')
 				),
 				array(
 						'field' => 'date',
 						'label' => 'Data / Hora',
 						'rules' => 'required',
-						'errors' => array('required' => '*%s Ã© necessÃ¡rio.')
+						'errors' => array('required' => '*%s é necessário.')
 				)
 		);
 		
@@ -105,7 +105,7 @@ class Pages extends CI_Controller {
 							'field' => 'object' . $i,
 							'label' => 'Objeto ' . $i,
 							'rules' => 'required',
-							'errors' => array('required' => '*%s Ã© necessÃ¡rio.')
+							'errors' => array('required' => '*%s é necessário.')
 					);
 			array_push($config, $rule);
 		}

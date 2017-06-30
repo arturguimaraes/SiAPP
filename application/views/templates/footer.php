@@ -15,7 +15,7 @@
         <!-- COMPANY EMAIL-->
         <div class="col-md-3 company-details">
             <div class="icon-top green-text">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
+            	<i class="fa fa-envelope" aria-hidden="true"></i>
             </div>
              siapp.uff@gmail.com
         </div>
@@ -23,7 +23,7 @@
         <!-- COMPANY PHONE NUMBER -->
         <!--<div class="col-md-2 company-details">
             <div class="icon-top blue-text">
-                <i class="fa fa-phone-square" aria-hidden="true"></i>
+            	<i class="fa fa-phone-square" aria-hidden="true"></i>
             </div>
             +55 21 2222 2222
         </div>-->

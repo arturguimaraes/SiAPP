@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="Artur GuimarÃ£es">
+    <meta name="author" content="Artur Guimarães">
 	
     <!-- Browser Info -->
     <link rel="icon" href="assets/img/icon/thief.png">

@@ -1,6 +1,6 @@
 /*
  * CSS Customization
- * Author: Artur GuimarÃ£es
+ * Author: Artur Guimarães
  */
 body {
     height: 100%;
@@ -60,10 +60,10 @@ i {
 }
 
 a {
-    color: #4C0009;
+	color: #4C0009;
     text-decoration: none;
     -webkit-transition: 0.25s;
-    -moz-transition: 0.25s;
+	-moz-transition: 0.25s;
     transition: 0.25s;
 }
 
@@ -144,14 +144,14 @@ li {
     .navbar-custom.top-nav-collapse {
         border-bottom: 1px solid rgba(255,255,255,.3);
     }
-    
-    .navbar-custom.top-nav-collapse a {
+	
+	.navbar-custom.top-nav-collapse a {
         color: #4C0009;
     }
-    
-    .navbar-custom.top-nav-collapse a:hover,
-    .navbar-custom.top-nav-collapse a:focus,
-    .navbar-custom.top-nav-collapse a:active {
+	
+	.navbar-custom.top-nav-collapse a:hover,
+	.navbar-custom.top-nav-collapse a:focus,
+	.navbar-custom.top-nav-collapse a:active {
         color: #A10013;
     }
 }
@@ -172,9 +172,9 @@ li {
 }
 
 .intro-body {
-    height: 100%;
-    margin-top: 50px;
-    padding-bottom: 50px;
+	height: 100%;
+	margin-top: 50px;
+	padding-bottom: 50px;
     vertical-align: middle;
 }
 
