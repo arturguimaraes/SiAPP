@@ -18,4 +18,18 @@ class Geo_position extends CI_Model {
 		return $this->db->insert_id();
 	}
 	
+	public function getById($id) {
+		$query = 'SELECT *
+				  FROM geo_position
+				  WHERE idGeo = ?
+				  LIMIT 1';
+				  
+		$result = $this->db->query($query, array(intval($id)))->result();
+		
+		if (count($result) == 1)
+			return $result[0];
+		else
+			return NULL;
+	}
+	
 }

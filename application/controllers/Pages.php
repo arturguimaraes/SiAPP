@@ -8,10 +8,14 @@ class Pages extends CI_Controller {
 	}
 	
 	public function index($page = 'home') {
+		$this->load->helper(array('form', 'url'));
+		$this->load->library(array('form_validation'));
+		$this->load->model(array('geo_position','occurrence','objects'));
+		
 		if(substr($_SERVER['PHP_SELF'], 1, -4) != 'index')
-      $page = substr($_SERVER['PHP_SELF'], 1, -4);
+      		$page = substr($_SERVER['PHP_SELF'], 1, -4);
     
-    if ($page == 'home')
+		if ($page == 'home')
 			$data = $this->home($page);
 		if ($page == 'confirm')
 			$data = $this->confirm($page);
@@ -19,6 +23,10 @@ class Pages extends CI_Controller {
 			$data = $this->inform($page);	
 		if ($page == 'success')
 			$data = $this->success($page);
+		if ($page == 'mapping')
+			$data = $this->mapping($page);
+		if ($page == 'rules')
+			$data = $this->rules($page);
 	}
 	
 	public function loadPage($page = 'home', $data) {
@@ -53,8 +61,6 @@ class Pages extends CI_Controller {
 	}
 	
 	public function confirm($page) {
-		$this->load->helper('url');
-		
 		$data['pageTitle'] = ' - Reportar um Crime';
 		$data['baseURL'] = base_url();
 		
@@ -67,14 +73,9 @@ class Pages extends CI_Controller {
 	}
 	
 	public function inform($page) {
-		if (count($_GET) == 0) {
-			$this->load->helper('url');
+		if (count($_GET) == 0)
 			redirect('', 'refresh');
-		}
 		
-		$this->load->helper(array('form', 'url'));
-		$this->load->library(array('form_validation'));
-		$this->load->model(array('geo_position','occurrence','objects'));
 		$this->form_validation->set_error_delimiters('<div class="error red-text italic margin-bottom-20">', '</div>');
 		
 		$data = $_GET;
@@ -136,9 +137,38 @@ class Pages extends CI_Controller {
 	}
 	
 	public function success($page) {		
-		$this->load->helper('url');
-		
 		$data['pageTitle'] = ' - Obrigado!';
+		$data['baseURL'] = base_url();
+		
+		$this->loadPage($page, $data);
+	}
+	
+	public function mapping($page) {
+		$data['pageTitle'] = ' - Visualização das Ocorrências';
+		$data['baseURL'] = base_url();
+		
+		$occurrence_types = array('Furto',
+								  'Roubo',
+								  'Sequestro',
+								  'Arrombamento'); 
+		
+		$allOccurrences = $this->occurrence->getAll();
+		
+		$data['mapObjects'] = array();
+		
+		foreach($allOccurrences as $occurrence) {
+			$geoLocation = $this->geo_position->getById($occurrence->geo_position);
+			$mapObject = array('occurrence_type'	=> $occurrence_types[intval($occurrence->occurrence_type) - 1],
+							   'latitude'			=> $geoLocation->latitude,
+							   'longitude'			=> $geoLocation->longitude);
+			array_push($data['mapObjects'], $mapObject);
+		}
+		
+		$this->loadPage($page, $data);
+	}
+	
+	public function rules($page) {		
+		$data['pageTitle'] = ' - Regras e Padrões!';
 		$data['baseURL'] = base_url();
 		
 		$this->loadPage($page, $data);

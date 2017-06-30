@@ -24,4 +24,16 @@ class Occurrence extends CI_Model {
 		return $this->db->insert_id();
 	}
 	
+	public function getAll() {
+		$query = 'SELECT *
+				  FROM occurrence';
+				  
+		$result = $this->db->query($query)->result();
+			
+		if (count($result) > 0)
+			return $result;
+		else
+			return NULL;
+	}
+	
 }

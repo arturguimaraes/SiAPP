@@ -59,3 +59,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['confirm'] = 'pages/index/confirm';
 $route['inform'] = 'pages/index/inform';
 $route['success'] = 'pages/index/success';
+$route['mapping'] = 'pages/index/mapping';
+$route['rules'] = 'pages/index/rules';
