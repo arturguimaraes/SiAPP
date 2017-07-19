@@ -61,3 +61,4 @@ $route['inform'] = 'pages/index/inform';
 $route['success'] = 'pages/index/success';
 $route['mapping'] = 'pages/index/mapping';
 $route['rules'] = 'pages/index/rules';
+$route['map'] = 'pages/index/map';

@@ -27,14 +27,18 @@ class Pages extends CI_Controller {
 			$data = $this->mapping($page);
 		if ($page == 'rules')
 			$data = $this->rules($page);
+		if ($page == 'map')
+			$data = $this->map($page);
 	}
 	
-	public function loadPage($page = 'home', $data) {
+	public function loadPage($page = 'home', $data, $templates = true) {
 		//Template and Page load
 		$root = 'pages/' . $page;
-		$this->load->view('templates/header', $data);
+		if($templates)
+			$this->load->view('templates/header', $data);
 		$this->load->view($root, $data);
-		$this->load->view('templates/footer', $data);
+		if($templates)
+			$this->load->view('templates/footer', $data);
 	}
 	
 	public function home($page) {
@@ -168,10 +172,14 @@ class Pages extends CI_Controller {
 	}
 	
 	public function rules($page) {		
-		$data['pageTitle'] = ' - Regras e Padrões!';
+		$data['pageTitle'] = ' - Visualização das Regras';
 		$data['baseURL'] = base_url();
-		
 		$this->loadPage($page, $data);
+	}
+	
+	public function map($page) {
+		$data = array();
+		$this->loadPage($page, $data, false);
 	}
 	
 	public function getNearbyPlaces($latitude, $longitude) {

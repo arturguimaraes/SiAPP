@@ -28,7 +28,11 @@
 <section id="data" class="container content-section text-center">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 margin-bottom-20">
-        	<div class="col-md-4 margin-bottom-50"><h2>Visualização das Regras e Padrões</h2></div>
-		</div>
+            <div class="col-md-2"><img class="rotate" src="assets/img/icon/map.png"></div>
+            <div class="col-md-10"><h2>Visualização das Regras</h2></div>
+        </div>
+        <div class="col-md-12 margin-bottom-20">
+        	<iframe id="induction-map-iframe" src="map.php"></iframe>
+    	</div>
 	</div>
 </section>
