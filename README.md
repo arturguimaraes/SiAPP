@@ -1,1 +1,1 @@
-# SiAPP
+# SiAPP it's a Criminal Occurrences Analysis System, based in logic-relational machine learning. The system uses data provided by the citizens, with a easy-to-fill form of the occurrences in the city of Niterói, Rio de Janeiro, to create rules and predict the occurrence of crimes in those areas.
